@@ -1,0 +1,192 @@
+{
+  "items": [
+    {
+      "record_a": {
+        "record_id": "salesforce:SA-000001",
+        "source_system": "salesforce",
+        "company_name": "Northwind Systems Inc.",
+        "domain": "northwindsystems.com",
+        "address": "4821 Cedar Avenue, Austin, TX",
+        "phone": "(512) 555-0134",
+        "industry": "Software",
+        "employees": 240,
+        "revenue": 18500000,
+        "notes": "Q3 renewal discussion scheduled. Champion is the VP of Operations.",
+        "normalized": {
+          "name": "northwind systems",
+          "domain": "northwindsystems.com",
+          "phone": "5125550134",
+          "address": "4821 cedar ave austin tx"
+        },
+        "pii_flags": ["phone", "address", "notes"]
+      },
+      "record_b": {
+        "record_id": "marketo:MA-000007",
+        "source_system": "marketo",
+        "company_name": "Nortwhind Systems",
+        "domain": null,
+        "address": "4821 Cedar Ave, Austin, TX",
+        "phone": "512-555-0134",
+        "industry": "Software",
+        "employees": 251,
+        "revenue": null,
+        "notes": null,
+        "normalized": {
+          "name": "nortwhind systems",
+          "domain": null,
+          "phone": "5125550134",
+          "address": "4821 cedar ave austin tx"
+        },
+        "pii_flags": ["phone", "address"]
+      },
+      "agent": {
+        "match": true,
+        "confidence": 0.79,
+        "evidence": ["phone_match", "name_similarity_high", "crm_notes_present"],
+        "reason": "Simulated review: records identified as the same company.",
+        "decided_by": "mock-oracle"
+      }
+    },
+    {
+      "record_a": {
+        "record_id": "salesforce:SA-000002",
+        "source_system": "salesforce",
+        "company_name": "Acme",
+        "domain": "acme.com",
+        "address": "902 Main Street, Denver, CO",
+        "phone": "(303) 555-0177",
+        "industry": "Manufacturing",
+        "employees": 3200,
+        "revenue": 240000000,
+        "notes": "Parent entity of the Acme group; subsidiaries billed separately.",
+        "normalized": {
+          "name": "acme",
+          "domain": "acme.com",
+          "phone": "3035550177",
+          "address": "902 main st denver co"
+        },
+        "pii_flags": ["phone", "address", "notes"]
+      },
+      "record_b": {
+        "record_id": "xactly:XA-000011",
+        "source_system": "xactly",
+        "company_name": "Acme Logistics",
+        "domain": "acme.com",
+        "address": "902 Main St, Denver, CO",
+        "phone": null,
+        "industry": "Logistics",
+        "employees": 140,
+        "revenue": 9000000,
+        "notes": null,
+        "normalized": {
+          "name": "acme logistics",
+          "domain": "acme.com",
+          "phone": null,
+          "address": "902 main st denver co"
+        },
+        "pii_flags": ["address"]
+      },
+      "agent": {
+        "match": false,
+        "confidence": 0.81,
+        "evidence": ["domain_match", "name_similarity_moderate", "crm_notes_present"],
+        "reason": "Simulated review: records identified as distinct companies.",
+        "decided_by": "mock-oracle"
+      }
+    },
+    {
+      "record_a": {
+        "record_id": "sixsense:SI-000003",
+        "source_system": "sixsense",
+        "company_name": "Blue Peak Analytics",
+        "domain": "bluepeakanalytics.io",
+        "address": null,
+        "phone": null,
+        "industry": "Software",
+        "employees": null,
+        "revenue": null,
+        "notes": null,
+        "normalized": {
+          "name": "blue peak analytics",
+          "domain": "bluepeakanalytics.io",
+          "phone": null,
+          "address": null
+        },
+        "pii_flags": []
+      },
+      "record_b": {
+        "record_id": "marketo:MA-000021",
+        "source_system": "marketo",
+        "company_name": "BLUE PEAK ANALYTICS LLC",
+        "domain": "app.bluepeakanalytics.io",
+        "address": "77 Harbor Road, Seattle, WA",
+        "phone": "(206) 555-0102",
+        "industry": null,
+        "employees": 85,
+        "revenue": 6200000,
+        "notes": null,
+        "normalized": {
+          "name": "blue peak analytics",
+          "domain": "app.bluepeakanalytics.io",
+          "phone": "2065550102",
+          "address": "77 harbor rd seattle wa"
+        },
+        "pii_flags": ["phone", "address"]
+      },
+      "agent": {
+        "match": true,
+        "confidence": 0.74,
+        "evidence": ["name_similarity_high"],
+        "reason": "Simulated review: records identified as the same company.",
+        "decided_by": "mock-oracle"
+      }
+    },
+    {
+      "record_a": {
+        "record_id": "salesforce:SA-000004",
+        "source_system": "salesforce",
+        "company_name": "Iron Gate Security",
+        "domain": "irongatesecurity.com",
+        "address": "15 Franklin Boulevard, Chicago, IL",
+        "phone": "(312) 555-0161",
+        "industry": "Security",
+        "employees": 410,
+        "revenue": 31000000,
+        "notes": "Franchise location in Chicago; not affiliated with other Iron Gate branches.",
+        "normalized": {
+          "name": "iron gate security",
+          "domain": "irongatesecurity.com",
+          "phone": "3125550161",
+          "address": "15 franklin blvd chicago il"
+        },
+        "pii_flags": ["phone", "address", "notes"]
+      },
+      "record_b": {
+        "record_id": "sixsense:SI-000019",
+        "source_system": "sixsense",
+        "company_name": "Iron Gate Security",
+        "domain": "irongatesecuritydenver.com",
+        "address": "88 Ridge Drive, Denver, CO",
+        "phone": null,
+        "industry": "Security",
+        "employees": 390,
+        "revenue": null,
+        "notes": null,
+        "normalized": {
+          "name": "iron gate security",
+          "domain": "irongatesecuritydenver.com",
+          "phone": null,
+          "address": "88 ridge dr denver co"
+        },
+        "pii_flags": ["address"]
+      },
+      "agent": {
+        "match": false,
+        "confidence": 0.77,
+        "evidence": ["name_similarity_high", "crm_notes_present"],
+        "reason": "Simulated review: records identified as distinct companies.",
+        "decided_by": "mock-oracle"
+      }
+    }
+  ]
+}

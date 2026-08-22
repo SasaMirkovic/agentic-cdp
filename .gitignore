@@ -1,0 +1,27 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# Local data (regenerated; artifacts in data/artifacts are committed)
+data/local/
+
+# Node
+node_modules/
+app/frontend/dist/
+tests/e2e/test-results/
+tests/e2e/playwright-report/
+tests/e2e/.tmp-data/
+
+# Env & editor
+.env
+.vscode/
+.idea/
+
+# MLflow (optional local tracking)
+mlruns/
+
+# Local-only provenance docs (historical; PLAN.md/ARCHITECTURE.md are the sources of truth)
+docs/archive/

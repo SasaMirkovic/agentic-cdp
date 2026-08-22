@@ -1,0 +1,180 @@
+{
+    "link_type": "dedupe_only",
+    "probability_two_random_records_match": 0.00018022942416370095,
+    "retain_matching_columns": true,
+    "retain_intermediate_calculation_columns": false,
+    "additional_columns_to_retain": [],
+    "sql_dialect": "duckdb",
+    "linker_uid": "lugkz5zy",
+    "em_convergence": 0.0001,
+    "max_iterations": 25,
+    "bayes_factor_column_prefix": "bf_",
+    "term_frequency_adjustment_column_prefix": "tf_",
+    "comparison_vector_value_column_prefix": "gamma_",
+    "unique_id_column_name": "unique_id",
+    "source_dataset_column_name": "source_dataset",
+    "blocking_rules_to_generate_predictions": [
+        {
+            "blocking_rule": "l.\"normalized_domain\" = r.\"normalized_domain\"",
+            "sql_dialect": "duckdb"
+        },
+        {
+            "blocking_rule": "l.\"name_first_token\" = r.\"name_first_token\"",
+            "sql_dialect": "duckdb"
+        },
+        {
+            "blocking_rule": "l.\"normalized_phone\" = r.\"normalized_phone\"",
+            "sql_dialect": "duckdb"
+        }
+    ],
+    "comparisons": [
+        {
+            "output_column_name": "normalized_name",
+            "comparison_levels": [
+                {
+                    "sql_condition": "\"normalized_name_l\" IS NULL OR \"normalized_name_r\" IS NULL",
+                    "label_for_charts": "normalized_name is NULL",
+                    "fix_m_probability": false,
+                    "fix_u_probability": false,
+                    "is_null_level": true
+                },
+                {
+                    "sql_condition": "\"normalized_name_l\" = \"normalized_name_r\"",
+                    "label_for_charts": "Exact match on normalized_name",
+                    "m_probability": 0.36786583830932773,
+                    "u_probability": 0.00018747961698463355,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                },
+                {
+                    "sql_condition": "jaro_winkler_similarity(\"normalized_name_l\", \"normalized_name_r\") >= 0.92",
+                    "label_for_charts": "Jaro-Winkler distance of normalized_name >= 0.92",
+                    "m_probability": 0.1514412750842892,
+                    "u_probability": 0.00033809085740743534,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                },
+                {
+                    "sql_condition": "jaro_winkler_similarity(\"normalized_name_l\", \"normalized_name_r\") >= 0.8",
+                    "label_for_charts": "Jaro-Winkler distance of normalized_name >= 0.8",
+                    "m_probability": 0.4806928866063831,
+                    "u_probability": 0.014383373460377576,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                },
+                {
+                    "sql_condition": "ELSE",
+                    "label_for_charts": "All other comparisons",
+                    "m_probability": 1.9342062524744905e-45,
+                    "u_probability": 0.9850910560652304,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                }
+            ],
+            "comparison_description": "JaroWinklerAtThresholds"
+        },
+        {
+            "output_column_name": "normalized_address",
+            "comparison_levels": [
+                {
+                    "sql_condition": "\"normalized_address_l\" IS NULL OR \"normalized_address_r\" IS NULL",
+                    "label_for_charts": "normalized_address is NULL",
+                    "fix_m_probability": false,
+                    "fix_u_probability": false,
+                    "is_null_level": true
+                },
+                {
+                    "sql_condition": "\"normalized_address_l\" = \"normalized_address_r\"",
+                    "label_for_charts": "Exact match on normalized_address",
+                    "m_probability": 0.50690709260904,
+                    "u_probability": 0.00024196311563717541,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                },
+                {
+                    "sql_condition": "jaro_winkler_similarity(\"normalized_address_l\", \"normalized_address_r\") >= 0.9",
+                    "label_for_charts": "Jaro-Winkler distance of normalized_address >= 0.9",
+                    "m_probability": 0.0007317071998027841,
+                    "u_probability": 0.0007615656603120442,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                },
+                {
+                    "sql_condition": "jaro_winkler_similarity(\"normalized_address_l\", \"normalized_address_r\") >= 0.75",
+                    "label_for_charts": "Jaro-Winkler distance of normalized_address >= 0.75",
+                    "m_probability": 0.012065744140238688,
+                    "u_probability": 0.02347784006414672,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                },
+                {
+                    "sql_condition": "ELSE",
+                    "label_for_charts": "All other comparisons",
+                    "m_probability": 0.48066130965081993,
+                    "u_probability": 0.9755186311599041,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                }
+            ],
+            "comparison_description": "JaroWinklerAtThresholds"
+        },
+        {
+            "output_column_name": "normalized_phone",
+            "comparison_levels": [
+                {
+                    "sql_condition": "\"normalized_phone_l\" IS NULL OR \"normalized_phone_r\" IS NULL",
+                    "label_for_charts": "normalized_phone is NULL",
+                    "fix_m_probability": false,
+                    "fix_u_probability": false,
+                    "is_null_level": true
+                },
+                {
+                    "sql_condition": "\"normalized_phone_l\" = \"normalized_phone_r\"",
+                    "label_for_charts": "Exact match on normalized_phone",
+                    "m_probability": 0.5084377754605918,
+                    "u_probability": 0.00023958732455029369,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                },
+                {
+                    "sql_condition": "ELSE",
+                    "label_for_charts": "All other comparisons",
+                    "m_probability": 0.4915622245394083,
+                    "u_probability": 0.9997604126754497,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                }
+            ],
+            "comparison_description": "ExactMatch"
+        },
+        {
+            "output_column_name": "industry",
+            "comparison_levels": [
+                {
+                    "sql_condition": "\"industry_l\" IS NULL OR \"industry_r\" IS NULL",
+                    "label_for_charts": "industry is NULL",
+                    "fix_m_probability": false,
+                    "fix_u_probability": false,
+                    "is_null_level": true
+                },
+                {
+                    "sql_condition": "\"industry_l\" = \"industry_r\"",
+                    "label_for_charts": "Exact match on industry",
+                    "m_probability": 0.5484129421949352,
+                    "u_probability": 0.08323009992166763,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                },
+                {
+                    "sql_condition": "ELSE",
+                    "label_for_charts": "All other comparisons",
+                    "m_probability": 0.45158705780506486,
+                    "u_probability": 0.9167699000783324,
+                    "fix_m_probability": false,
+                    "fix_u_probability": false
+                }
+            ],
+            "comparison_description": "ExactMatch"
+        }
+    ]
+}
